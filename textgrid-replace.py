@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """ Usage:
       textgrid-replace textgridfile tradition_pos_file
+
+      textgridfile: The TextGrid file
+      tradition_pos_file: The corresponding Chinese text
+      The result will be stored as the original TextGrid file plus suffix .rep
 """
 
 import sys
