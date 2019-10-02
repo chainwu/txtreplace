@@ -11,21 +11,17 @@ import sys
 import tgt
 
 def textgrid_replace(txtgrid, tradchin):
-    #first read textgrid file
-    
-    #then read traditional chinese pos file
-    
     data = [line.strip().split() for line in open(tradchin, 'r')]
-    print(data)
+    #print(data)
     flat_list = [item for sublist in data for item in sublist]
-    print(flat_list)
+    #print(flat_list)
     
     tg = tgt.io.read_textgrid(txtgrid)
     
     namelist = tg.get_tier_names()
     
     wtname = [s for s in namelist if "word" in s.lower()]
-    print(wtname)
+    #print("Word tier name: ", wtname[0])
     if wtname != "":
         wtier = tg.get_tier_by_name(wtname[0])
         objlen = 0
@@ -33,7 +29,7 @@ def textgrid_replace(txtgrid, tradchin):
             if ann.text != 'sp' and ann.text != '':
                 objlen = objlen + 1
         if objlen != len(flat_list):
-            print(objlen, len(flat_list), "Length not equal")
+            print("TextGrid:", objlen, "POS :", len(flat_list), "Length not equal")
             exit(-1)
         else:
             idx = 0

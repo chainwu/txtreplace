@@ -1,0 +1,6 @@
+#!/bin/bash
+
+chmod a+x  textgrid-replace.py
+
+echo ln -s `pwd`/textgrid-replace.py /usr/bin/
+ln -s `pwd`/textgrid-replace.py /usr/bin/
