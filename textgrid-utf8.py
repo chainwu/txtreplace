@@ -30,7 +30,8 @@ if __name__ == '__main__':
     except:
         print(__doc__)
         sys.exit(0)
-		
+
+print("Converting ", textfile, "...")
 convert_utf8(textfile)
 
 
